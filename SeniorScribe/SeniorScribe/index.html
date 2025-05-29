@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptCraft - AI Prompt Builder</title>
+    <meta name="description" content="Create comprehensive prompts for AI code editors with our guided wizard and templates. No technical expertise required.">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="PromptCraft - AI Prompt Builder">
+    <meta property="og:description" content="Transform your ideas into comprehensive, detailed prompts that help AI code editors build exactly what you envision.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://promptcraft.app">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i data-lucide="sparkles"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>PromptCraft</h1>
+                    <p>AI Prompt Builder</p>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-primary" onclick="showAuthModal()">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div id="app-container">
+        <!-- Landing Page -->
+        <section id="landing-page" class="landing-page">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <i data-lucide="sparkles"></i>
+                            <span>AI-Powered Prompt Engineering</span>
+                        </div>
+                        <h1 class="hero-title">
+                            Craft Perfect Prompts for Your AI Code Editor
+                        </h1>
+                        <p class="hero-description">
+                            Transform your ideas into comprehensive, detailed prompts that help AI code editors build exactly what you envision. 
+                            No technical expertise required.
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary btn-large" onclick="startPromptBuilder()">
+                                Start Building Prompts
+                            </button>
+                            <button class="btn btn-secondary btn-large" onclick="showTemplates()">
+                                View Templates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="features-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Everything You Need</h2>
+                        <p>Professional tools to create comprehensive AI prompts</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <h3>Guided Wizard</h3>
+                            <p>Step-by-step questionnaire that guides you through creating comprehensive prompts</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-lucide="check-circle"></i>
+                            </div>
+                            <h3>Template Library</h3>
+                            <p>Pre-built templates for common web applications like e-commerce, blogs, and dashboards</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-lucide="shield"></i>
+                            </div>
+                            <h3>Real-time Preview</h3>
+                            <p>See your prompt being built in real-time with optimization suggestions</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <h3>Save & Manage</h3>
+                            <p>Save your prompts locally and manage your prompt library with ease</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-lucide="sparkles"></i>
+                            </div>
+                            <h3>Smart Optimization</h3>
+                            <p>Built-in suggestions to improve your prompts for better results</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-lucide="download"></i>
+                            </div>
+                            <h3>Export & Share</h3>
+                            <p>Export your prompts in multiple formats and share with your team</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="container">
+                    <div class="cta-card">
+                        <h2>Ready to Start Building?</h2>
+                        <p>Join thousands of developers who are creating better AI prompts with PromptCraft</p>
+                        <button class="btn btn-primary btn-large" onclick="startPromptBuilder()">
+                            Get Started for Free
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section id="dashboard-page" class="dashboard-page hidden">
+            <div class="dashboard-container">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <div class="brand-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <div class="brand-text">
+                            <h3>PromptCraft</h3>
+                            <p>AI Prompt Builder</p>
+                        </div>
+                    </div>
+                    
+                    <nav class="sidebar-nav">
+                        <a href="#" class="nav-item active" onclick="showDashboard()">
+                            <i data-lucide="home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showPromptBuilder()">
+                            <i data-lucide="plus"></i>
+                            <span>New Prompt</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showMyPrompts()">
+                            <i data-lucide="folder"></i>
+                            <span>My Prompts</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showTemplates()">
+                            <i data-lucide="layout-template"></i>
+                            <span>Templates</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showSettings()">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <div class="page-header">
+                        <h1>Dashboard</h1>
+                        <p>Create comprehensive prompts for your AI code editor</p>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <div class="action-card" onclick="showPromptBuilder()">
+                            <div class="action-icon">
+                                <i data-lucide="plus"></i>
+                            </div>
+                            <h3>New Prompt</h3>
+                            <p>Start building a new AI prompt from scratch</p>
+                            <i data-lucide="arrow-right" class="action-arrow"></i>
+                        </div>
+                        
+                        <div class="action-card" onclick="showTemplates()">
+                            <div class="action-icon">
+                                <i data-lucide="layout-template"></i>
+                            </div>
+                            <h3>Use Template</h3>
+                            <p>Choose from pre-built prompt templates</p>
+                            <i data-lucide="arrow-right" class="action-arrow"></i>
+                        </div>
+                        
+                        <div class="action-card" onclick="showMyPrompts()">
+                            <div class="action-icon">
+                                <i data-lucide="folder"></i>
+                            </div>
+                            <h3>My Prompts</h3>
+                            <p>Continue working on saved prompts</p>
+                            <i data-lucide="arrow-right" class="action-arrow"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Prompts -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Recent Prompts</h2>
+                            <button class="btn btn-ghost" onclick="showMyPrompts()">
+                                View All <i data-lucide="arrow-right"></i>
+                            </button>
+                        </div>
+                        <div id="recent-prompts" class="prompts-grid">
+                            <!-- Recent prompts will be loaded here -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <!-- Prompt Builder Page -->
+        <section id="prompt-builder-page" class="prompt-builder-page hidden">
+            <div class="builder-container">
+                <div class="builder-header">
+                    <button class="btn btn-ghost" onclick="goBack()">
+                        <i data-lucide="arrow-left"></i>
+                        Back
+                    </button>
+                    <h1>Prompt Builder</h1>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" onclick="savePrompt()" id="save-btn">
+                            <i data-lucide="save"></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="builder-content">
+                    <!-- Wizard Panel -->
+                    <div class="wizard-panel">
+                        <div class="wizard-header">
+                            <h2>Prompt Configuration</h2>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                            <p class="progress-text">Step <span id="current-step">1</span> of <span id="total-steps">4</span></p>
+                        </div>
+                        
+                        <div class="wizard-content" id="wizard-content">
+                            <!-- Wizard steps will be loaded here -->
+                        </div>
+                        
+                        <div class="wizard-actions">
+                            <button class="btn btn-secondary" onclick="previousStep()" id="prev-btn" disabled>
+                                <i data-lucide="arrow-left"></i>
+                                Previous
+                            </button>
+                            <button class="btn btn-primary" onclick="nextStep()" id="next-btn">
+                                Next
+                                <i data-lucide="arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Preview Panel -->
+                    <div class="preview-panel">
+                        <div class="preview-header">
+                            <h2>
+                                <i data-lucide="eye"></i>
+                                Generated Prompt
+                            </h2>
+                            <div class="preview-actions">
+                                <button class="btn btn-ghost" onclick="copyPrompt()" id="copy-btn" disabled>
+                                    <i data-lucide="copy"></i>
+                                    Copy
+                                </button>
+                                <button class="btn btn-ghost" onclick="downloadPrompt()" id="download-btn" disabled>
+                                    <i data-lucide="download"></i>
+                                    Download
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-content">
+                            <div id="prompt-preview" class="prompt-preview">
+                                <div class="preview-placeholder">
+                                    <i data-lucide="eye"></i>
+                                    <h3>No preview yet</h3>
+                                    <p>Complete the wizard to generate your prompt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Prompts Page -->
+        <section id="my-prompts-page" class="my-prompts-page hidden">
+            <div class="dashboard-container">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <div class="brand-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <div class="brand-text">
+                            <h3>PromptCraft</h3>
+                            <p>AI Prompt Builder</p>
+                        </div>
+                    </div>
+                    
+                    <nav class="sidebar-nav">
+                        <a href="#" class="nav-item" onclick="showDashboard()">
+                            <i data-lucide="home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showPromptBuilder()">
+                            <i data-lucide="plus"></i>
+                            <span>New Prompt</span>
+                        </a>
+                        <a href="#" class="nav-item active" onclick="showMyPrompts()">
+                            <i data-lucide="folder"></i>
+                            <span>My Prompts</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showTemplates()">
+                            <i data-lucide="layout-template"></i>
+                            <span>Templates</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showSettings()">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <main class="main-content">
+                    <div class="page-header">
+                        <h1>My Prompts</h1>
+                        <p>Manage your saved prompts</p>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search your prompts..." id="prompts-search" oninput="filterPrompts()">
+                        <button class="btn btn-primary" onclick="showPromptBuilder()">
+                            <i data-lucide="plus"></i>
+                            New Prompt
+                        </button>
+                    </div>
+                    
+                    <div id="saved-prompts" class="prompts-grid">
+                        <!-- Saved prompts will be loaded here -->
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <!-- Templates Page -->
+        <section id="templates-page" class="templates-page hidden">
+            <div class="dashboard-container">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <div class="brand-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <div class="brand-text">
+                            <h3>PromptCraft</h3>
+                            <p>AI Prompt Builder</p>
+                        </div>
+                    </div>
+                    
+                    <nav class="sidebar-nav">
+                        <a href="#" class="nav-item" onclick="showDashboard()">
+                            <i data-lucide="home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showPromptBuilder()">
+                            <i data-lucide="plus"></i>
+                            <span>New Prompt</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showMyPrompts()">
+                            <i data-lucide="folder"></i>
+                            <span>My Prompts</span>
+                        </a>
+                        <a href="#" class="nav-item active" onclick="showTemplates()">
+                            <i data-lucide="layout-template"></i>
+                            <span>Templates</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="showSettings()">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <main class="main-content">
+                    <div class="page-header">
+                        <h1>Templates</h1>
+                        <p>Choose from pre-built prompt templates</p>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search templates..." id="templates-search" oninput="filterTemplates()">
+                    </div>
+                    
+                    <div id="templates-grid" class="templates-grid">
+                        <!-- Templates will be loaded here -->
+                    </div>
+                </main>
+            </div>
+        </section>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome to PromptCraft</h2>
+                <button class="modal-close" onclick="hideAuthModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Enter your name to get started with creating AI prompts:</p>
+                <input type="text" id="user-name" placeholder="Your name" class="form-input">
+                <button class="btn btn-primary btn-full" onclick="authenticateUser()">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

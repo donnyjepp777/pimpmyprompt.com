@@ -1,0 +1,105 @@
+# WEB APP DEVELOPMENT REQUEST
+
+## 🎯 PROJECT OVERVIEW
+Create a web app that act as a senior software engineer to help non tech people craft a comprehensive and details prompt for their ai code editor
+
+## 👥 TARGET AUDIENCE & CONTEXT
+**Target Users:** Non tech people trying to build a website for the first time
+
+**Usage Context:** Primarily used when need to prompt ai code editot
+
+**User Experience Level:** advanced
+
+## ⚡ CORE FUNCTIONALITY
+
+### Essential Features (Must-Have):
+- User registration and authentication
+- CRUD operations (Create, Read, Update, Delete)
+- User profiles and settings
+- Search and filtering functionality
+- File upload and management
+- Real-time notifications
+- Data visualization with charts and graphs
+- Role-based access control
+- Multi-language support
+- Mobile responsive design
+
+### Additional Features (Nice-to-Have):
+- Dark mode theme toggle
+- Email notifications and alerts
+- Calendar integration
+- Social media sharing capabilities
+- Advanced search with filters
+- Export data to PDF/Excel
+- Offline functionality
+- Time tracking and productivity metrics
+- Collaboration tools (comments, mentions)
+- Advanced reporting and analytics
+- Automated backups
+- Customizable dashboard
+
+## 🎨 DESIGN REQUIREMENTS
+
+**Design Style:** professional
+**Color Scheme:** Dark grey
+**Design Inspiration:** Cursor ai inspired
+
+**Layout Preferences:**
+- responsive
+- sidebar
+- card layout
+- grid
+- dashboard
+
+## 🔧 TECHNICAL SPECIFICATIONS
+
+**Preferred Technologies:** vanilla
+
+**Required Integrations:**
+- Payment processing (Stripe, PayPal)
+- Google Analytics and tracking
+- Email service (SendGrid, Mailchimp)
+- Social media login (Google, Facebook, Twitter)
+- Cloud storage (AWS S3, Google Drive)
+- Calendar APIs (Google Calendar, Outlook)
+- Maps integration (Google Maps, Mapbox)
+- SMS notifications (Twilio)
+- CRM integration (Salesforce, HubSpot)
+- Database services (Firebase, MongoDB)
+- AI/ML services (OpenAI, Google AI)
+- Webhook integrations
+
+**Technical Constraints:**
+- GDPR compliance required
+- HIPAA compliance for healthcare data
+- Mobile-first design priority
+- Must work in low-bandwidth environments
+- Accessibility (WCAG 2.1 AA compliance)
+- Support for older browsers (IE11)
+- Multi-tenant architecture
+- High-availability (99.9% uptime)
+- Data encryption at rest and in transit
+- Scalable to handle 10,000+ concurrent users
+- Must support multiple time zones
+- Audit trail for all user actions
+
+**Performance Requirements:**
+- fast loading
+- offline capable
+- real time
+- scalable
+
+## 📋 IMPLEMENTATION GUIDELINES
+
+1. **Code Quality:** Write clean, well-commented, and maintainable code
+2. **User Experience:** Prioritize intuitive navigation and clear user feedback
+3. **Responsive Design:** Ensure the application works seamlessly across all device sizes
+4. **Accessibility:** Include proper ARIA labels, keyboard navigation, and high contrast support
+5. **Performance:** Optimize for fast loading times and smooth interactions
+6. **Security:** Implement proper input validation and security best practices
+
+## 🚀 DEVELOPMENT APPROACH
+
+Please create a fully functional web-app that addresses all the requirements above. Start with the core functionality and ensure it works perfectly before adding additional features. Use modern development practices and provide clear documentation for any complex logic.
+
+Focus on creating an intuitive user interface that matches the specified design requirements while maintaining excellent performance and accessibility standards.
